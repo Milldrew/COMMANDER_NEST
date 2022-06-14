@@ -13,12 +13,18 @@ export class HelloCommander implements CommandRunner {
     options = await this.inquirerService.ask('personInfo', options);
     console.log(`Hello ${options.name} are you ${options.age} years old?`);
   }
-  @Option({ flags: '-n <name>' })
+  @Option({
+    flags: '-n, --name [name]',
+    description: 'users name',
+  })
   parseName(val: string) {
     return val;
   }
 
-  @Option({ flags: '-a <age>' })
+  @Option({
+    flags: '-a, --age [age]',
+    description: 'users age',
+  })
   parseAge(val: string) {
     return Number(val);
   }
