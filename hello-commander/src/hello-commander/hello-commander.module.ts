@@ -1,4 +1,8 @@
 import { Module } from '@nestjs/common';
+import { HelloCommander } from './hello-commander';
 
-@Module({})
+@Module({
+  providers: [HelloCommander],
+  exports: [HelloCommander],
+})
 export class HelloCommanderModule {}

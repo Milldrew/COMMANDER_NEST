@@ -11,3 +11,8 @@ export class HelloCommander implements CommandRunner {
 parseName(val: string) {
   return val
 }
+
+@Option({flags: '-a <age>'})
+parseAge(val: string) {
+  return Number(val)
+}
